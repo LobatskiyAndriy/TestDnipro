@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.b9a5da1d.chunk.css",
-    "main.js": "/static/js/main.6a17b428.chunk.js",
-    "main.js.map": "/static/js/main.6a17b428.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.43f245d3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.43f245d3.js.map",
-    "static/js/2.2cc989da.chunk.js": "/static/js/2.2cc989da.chunk.js",
-    "static/js/2.2cc989da.chunk.js.map": "/static/js/2.2cc989da.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.b9a5da1d.chunk.css.map": "/static/css/main.b9a5da1d.chunk.css.map",
-    "static/js/2.2cc989da.chunk.js.LICENSE.txt": "/static/js/2.2cc989da.chunk.js.LICENSE.txt"
+    "main.css": "/TestDnipro/static/css/main.b9a5da1d.chunk.css",
+    "main.js": "/TestDnipro/static/js/main.6a17b428.chunk.js",
+    "main.js.map": "/TestDnipro/static/js/main.6a17b428.chunk.js.map",
+    "runtime-main.js": "/TestDnipro/static/js/runtime-main.919b4ccb.js",
+    "runtime-main.js.map": "/TestDnipro/static/js/runtime-main.919b4ccb.js.map",
+    "static/js/2.363baab1.chunk.js": "/TestDnipro/static/js/2.363baab1.chunk.js",
+    "static/js/2.363baab1.chunk.js.map": "/TestDnipro/static/js/2.363baab1.chunk.js.map",
+    "index.html": "/TestDnipro/index.html",
+    "static/css/main.b9a5da1d.chunk.css.map": "/TestDnipro/static/css/main.b9a5da1d.chunk.css.map",
+    "static/js/2.363baab1.chunk.js.LICENSE.txt": "/TestDnipro/static/js/2.363baab1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.43f245d3.js",
-    "static/js/2.2cc989da.chunk.js",
+    "static/js/runtime-main.919b4ccb.js",
+    "static/js/2.363baab1.chunk.js",
     "static/css/main.b9a5da1d.chunk.css",
     "static/js/main.6a17b428.chunk.js"
   ]
