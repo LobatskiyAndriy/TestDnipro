@@ -6,10 +6,8 @@ import { makeStyles, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     title:{
         fontWeight:'bold'
-    }
-   
+    }   
 }));
-
 
 export const SmalInfoUser = (Props) => {
     const classes = useStyles();

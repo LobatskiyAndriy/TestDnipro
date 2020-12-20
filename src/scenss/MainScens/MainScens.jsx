@@ -6,19 +6,18 @@ import AddIcon from '@material-ui/icons/Add';
 import Controls from '../../components/controls'
 
 import { GroupForm } from '../../components/GroupForm/GroupForm'
-import { ListAplicants } from '../../components/ListAplicants/ListAplicants'
-import { ClientsChange } from '../../components/ClientsChange/ClientsChange'
+import ListAplicants from '../../components/ListAplicants/ListAplicants'
+import ClientsChange from '../../components/ClientsChange/ClientsChange'
 import { AddFormAplicants } from '../../components/AddFormAplicants/AddFormAplicants'
+import { useSelector } from 'react-redux';
+import JsomShow from '../../components/JsomShow/JsomShow';
 
-const initialStateForm = {
-    clienId: "",
-    applicantsIds: [],
-    newApplicants: []
-}
+
 
 export const MainScens = () => {
 
-    const [dataForm, setDataForm] = useState(initialStateForm)
+    const { activeUser } = useSelector(({ users }) => users)
+
     const [showAddForm, setShowAddForm] = useState(false);
     const [showJson, setShowJson] = useState(false);
 
@@ -30,21 +29,19 @@ export const MainScens = () => {
         setShowJson(!showJson)
     }
 
-    const getJsonIndented = (data) => JSON.stringify(data, null, 2) ;
-
     return (
         <div>
             <Container maxWidth="md">
 
                 <GroupForm title="Клієнт" >
-                    <ClientsChange dataForm={dataForm} initialStateForm={initialStateForm} setDataForm={setDataForm} ></ClientsChange>
+                    <ClientsChange />
                 </GroupForm>
 
-                {!!dataForm.clienId && (
+                {!!activeUser && (
                     <GroupForm title="Замовник">
                         <Grid container>
                             <Grid container item xs={12}  >
-                                <ListAplicants dataForm={dataForm} setDataForm={setDataForm}   ></ListAplicants>
+                                <ListAplicants />
                             </Grid>
                             <Grid item xs={12}  >
                                 <Button
@@ -54,21 +51,22 @@ export const MainScens = () => {
                                     onClick={showForm}
                                     size="medium"
                                 >
-                                    {!showAddForm?'Додати':'Cховати форму'}
-                                    </Button>
+                                    {!showAddForm ? 'Додати' : 'Cховати форму'}
+                                </Button>
 
-                                {!!showAddForm && <AddFormAplicants setShowAddForm={setShowAddForm} setDataForm={setDataForm} dataForm={dataForm}></AddFormAplicants>}
+                                {!!showAddForm && <AddFormAplicants setShowAddForm={setShowAddForm} ></AddFormAplicants>}
                             </Grid>
                             <Grid container item xs={12}  >
-
                                 <Controls.Button onClick={formSubmit}>Зберегти заявку</Controls.Button>
                             </Grid>
                         </Grid>
                     </GroupForm>
                 )}
 
-                {!!showJson && (<GroupForm    title='Json запиту'>
-                    <pre style={{ overflow: "auto" }} >{getJsonIndented(dataForm)}</pre>
+
+
+                {!!showJson && (<GroupForm title='Json запиту'>
+                    <JsomShow />
                 </GroupForm>)}
 
             </Container>

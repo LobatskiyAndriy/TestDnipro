@@ -7,8 +7,10 @@ import { Country } from './listCountry.js'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
-import { uuid } from 'uuidv4';
+import uuid from "react-uuid";
 import { nameErrors, typeUser } from './const';
+import { useDispatch } from 'react-redux';
+import { addAplicans } from '../../redax/actions/aplicants';
 
 
 const initialValues = {
@@ -44,7 +46,7 @@ const validChem = Yup.object({
         }),
 })
 
-const useStyles = makeStyles((theme)=>({
+const useStyles = makeStyles((theme) => ({
     form: {
         marginTop: 10,
         marginBottom: 20,
@@ -66,48 +68,10 @@ const useStyles = makeStyles((theme)=>({
 }));
 
 
-export const AddFormAplicants = (props) => {
-    const classes = useStyles()
-    const { setDataForm, dataForm, setShowAddForm } = props;
-
-    return (
-        <div className={classes.form} >
-            <Typography variant="h6">Додати нового</Typography>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validChem}
-                onSubmit={(values, { setSubmitting }) => {
-
-
-                    let tempArray = []
-                    tempArray = dataForm.newApplicants.map((item) => item)
-                    values.codeID = uuid();
-                    tempArray.push(values);
-
-
-                    setDataForm({
-                        ...dataForm,
-                        newApplicants: tempArray
-                    })
-                    tempArray = [];
-
-                    setShowAddForm(false);
-                }}
-                children={FormUser}
-
-            >
-            </Formik>
-
-        </div>
-    )
-}
-
-
-
 export const FormUser = ({ ...props }) => {
     const classes = useStyles()
     const { values } = props;
- 
+
     return (
         <Form>
             <Controls.RadioGroup
@@ -178,3 +142,34 @@ export const FormUser = ({ ...props }) => {
 
     )
 }
+
+export const AddFormAplicants = (props) => {
+    const classes = useStyles()
+    const { setShowAddForm } = props;
+
+    const dispatch = useDispatch()
+
+    return (
+        <div className={classes.form} >
+            <Typography variant="h6">Додати нового</Typography>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validChem}
+                onSubmit={(values, { setSubmitting }) => {
+                    values.codeID = uuid();
+                    values.selected = true;
+                    values.disable = true;
+                    dispatch(addAplicans(values));
+                    setShowAddForm(false);
+                }}
+                children={FormUser}
+
+            >
+            </Formik>
+
+        </div>
+    )
+}
+
+
+

@@ -5,10 +5,18 @@ import App from './App';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { theme } from './theme';
 
+import store from './redax/store'
+import { Provider } from 'react-redux'
+
+window.storeApp = store;
+
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <Provider store={store}>
+
+      <App />
+    </Provider>
     <CssBaseline></CssBaseline>
   </ThemeProvider>
   ,

@@ -1,16 +1,21 @@
 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
+import { requestUsers } from './redax/actions/users';
 import { MainScens } from './scenss/MainScens/MainScens';
 
 
+
+
 function App() {
-  return (
-    <>
+  const dispatch = useDispatch()
 
-      <MainScens></MainScens>
+  useEffect(() => {
+    dispatch(requestUsers())
+  }, [])
 
-    </>
-  );
+  return (<MainScens />);
 }
 
 export default App;
