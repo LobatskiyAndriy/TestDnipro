@@ -50,9 +50,8 @@ const ListAplicants = ({ ...props }) => {
 
                         {newApplicants.map(item => {
                             return (
-                                <div>
-                                    <CustomListItem
-                                        key={`${item.id}${item.name}`}
+                                <div key={`${item.codeID}${item.name}`}>
+                                    <CustomListItem 
                                         color="primary"
                                         onChange={onChangeItem}
                                         className={classes.listText}
