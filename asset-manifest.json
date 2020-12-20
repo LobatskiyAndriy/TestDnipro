@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TestDnipro/static/css/main.b9a5da1d.chunk.css",
-    "main.js": "/TestDnipro/static/js/main.1fd72604.chunk.js",
-    "main.js.map": "/TestDnipro/static/js/main.1fd72604.chunk.js.map",
+    "main.js": "/TestDnipro/static/js/main.494db758.chunk.js",
+    "main.js.map": "/TestDnipro/static/js/main.494db758.chunk.js.map",
     "runtime-main.js": "/TestDnipro/static/js/runtime-main.919b4ccb.js",
     "runtime-main.js.map": "/TestDnipro/static/js/runtime-main.919b4ccb.js.map",
     "static/js/2.24c2e538.chunk.js": "/TestDnipro/static/js/2.24c2e538.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.919b4ccb.js",
     "static/js/2.24c2e538.chunk.js",
     "static/css/main.b9a5da1d.chunk.css",
-    "static/js/main.1fd72604.chunk.js"
+    "static/js/main.494db758.chunk.js"
   ]
 }
